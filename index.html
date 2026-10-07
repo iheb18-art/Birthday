@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For My Love - 11 October</title>
+    <meta
+      name="description"
+      content="A romantic birthday page made with love for October 11."
+    >
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23081125'/%3E%3Cpath d='M43 10c-9 2-16 10-16 20s7 18 16 20c-4 3-9 5-14 5C17 55 8 46 8 34S17 13 29 13c5 0 10 2 14 5Z' fill='%23ffd98a'/%3E%3Cpath d='M46 24l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z' fill='%23f6a7bd'/%3E%3C/svg%3E"
+    >
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #fff7ef;
+        --muted: #d8cbd0;
+        --rose: #f5a7bd;
+        --rose-deep: #9e3b5b;
+        --gold: #ffd88a;
+        --night: #071022;
+        --wine: #25101d;
+        --glass: rgba(7, 16, 34, 0.58);
+        --line: rgba(255, 247, 239, 0.2);
+        --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--night);
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        background:
+          linear-gradient(90deg, rgba(5, 10, 24, 0.96), rgba(5, 10, 24, 0.58) 44%, rgba(5, 10, 24, 0.22)),
+          linear-gradient(180deg, rgba(5, 10, 24, 0.06), rgba(5, 10, 24, 0.82)),
+          url("assets/birthday-night.png") center / cover no-repeat;
+        content: "";
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background-image:
+          radial-gradient(circle at 10% 15%, rgba(255, 216, 138, 0.8) 0 1px, transparent 2px),
+          radial-gradient(circle at 26% 34%, rgba(245, 167, 189, 0.7) 0 1px, transparent 2px),
+          radial-gradient(circle at 64% 12%, rgba(255, 247, 239, 0.7) 0 1px, transparent 2px),
+          radial-gradient(circle at 88% 28%, rgba(255, 216, 138, 0.72) 0 1px, transparent 2px);
+        background-size: 280px 260px, 330px 310px, 420px 360px, 360px 290px;
+        animation: shimmer 18s linear infinite;
+        content: "";
+        opacity: 0.38;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        display: grid;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 0 56px;
+      }
+
+      .hero-shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.64fr);
+        gap: 44px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        width: fit-content;
+        margin: 0 0 20px;
+        padding: 9px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(7, 16, 34, 0.42);
+        color: var(--gold);
+        font-size: 0.91rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        backdrop-filter: blur(16px);
+      }
+
+      .eyebrow span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--rose);
+        box-shadow: 0 0 18px var(--rose);
+      }
+
+      h1 {
+        max-width: 820px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3.15rem, 8vw, 7.8rem);
+        font-weight: 500;
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 28px 0 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.32rem);
+        line-height: 1.75;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffd98a, #f5a7bd);
+        color: #210d18;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 16px 38px rgba(245, 167, 189, 0.22);
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 48px rgba(245, 167, 189, 0.34);
+      }
+
+      .button.secondary {
+        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--ink);
+        box-shadow: none;
+        backdrop-filter: blur(16px);
+      }
+
+      .countdown-card {
+        align-self: stretch;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: linear-gradient(180deg, rgba(255, 247, 239, 0.13), rgba(255, 247, 239, 0.04));
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .countdown-card h2 {
+        margin: 0 0 14px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.9rem;
+        font-weight: 500;
+      }
+
+      .countdown-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .timer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 24px 0;
+      }
+
+      .timer div {
+        min-width: 0;
+        padding: 14px 8px;
+        border: 1px solid rgba(255, 216, 138, 0.22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        text-align: center;
+      }
+
+      .timer strong {
+        display: block;
+        font-size: clamp(1.25rem, 3vw, 2rem);
+      }
+
+      .timer span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .scroll-cue {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 0.94rem;
+        text-decoration: none;
+      }
+
+      .scroll-cue::before {
+        width: 36px;
+        height: 1px;
+        background: var(--gold);
+        content: "";
+      }
+
+      main {
+        padding-bottom: 80px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      .section-title {
+        max-width: 740px;
+        margin: 0 0 30px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 500;
+        line-height: 1.02;
+      }
+
+      .letter {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 34px;
+        align-items: start;
+      }
+
+      .date-mark {
+        position: sticky;
+        top: 24px;
+        padding: 28px;
+        border: 1px solid rgba(255, 216, 138, 0.28);
+        border-radius: 8px;
+        background: rgba(37, 16, 29, 0.76);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(20px);
+      }
+
+      .date-mark strong {
+        display: block;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 10vw, 6rem);
+        font-weight: 500;
+        line-height: 0.85;
+      }
+
+      .date-mark span {
+        display: block;
+        margin-top: 12px;
+        color: var(--gold);
+        font-size: 1rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .letter-copy {
+        display: grid;
+        gap: 18px;
+      }
+
+      .note {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--glass);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .note p {
+        margin: 0;
+        color: #f8e8df;
+        font-size: 1.04rem;
+        line-height: 1.78;
+      }
+
+      .memory-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .memory {
+        min-height: 250px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04)),
+          rgba(7, 16, 34, 0.62);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+      }
+
+      .memory span {
+        color: var(--gold);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .memory h3 {
+        margin: 18px 0 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.65rem;
+        font-weight: 500;
+      }
+
+      .memory p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .wish {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .wish-panel,
+      .wish-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(7, 16, 34, 0.66);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .wish-panel {
+        padding: clamp(26px, 5vw, 54px);
+      }
+
+      .wish-panel p {
+        max-width: 680px;
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      .wish-card {
+        display: grid;
+        place-items: center;
+        min-height: 360px;
+        padding: 24px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .moon-button {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 190px;
+        height: 190px;
+        border: 1px solid rgba(255, 216, 138, 0.48);
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 30% 30%, #fff3c5, #ffd98a 48%, #e59676 100%);
+        color: #2a1020;
+        font-weight: 900;
+        line-height: 1.25;
+        box-shadow:
+          0 0 42px rgba(255, 216, 138, 0.38),
+          inset -22px -26px 34px rgba(104, 41, 47, 0.18);
+        cursor: pointer;
+        transition: transform 220ms ease;
+      }
+
+      .moon-button:hover,
+      .moon-button:focus-visible {
+        transform: scale(1.04) rotate(-2deg);
+      }
+
+      .hidden-wish {
+        display: none;
+        max-width: 310px;
+      }
+
+      .wish-card.open .moon-button {
+        display: none;
+      }
+
+      .wish-card.open .hidden-wish {
+        display: block;
+        animation: reveal 460ms ease both;
+      }
+
+      .hidden-wish h3 {
+        margin: 0 0 16px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2.2rem;
+        font-weight: 500;
+      }
+
+      .hidden-wish p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      footer {
+        padding: 30px 0 54px;
+        color: rgba(255, 247, 239, 0.72);
+        text-align: center;
+      }
+
+      .quiz-shell {
+        max-width: 720px;
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(37, 16, 29, 0.9);
+      }
+
+      .quiz-meta {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--gold);
+        font-size: 0.9rem;
+      }
+
+      .quiz-progress {
+        width: 100%;
+        height: 6px;
+        margin: 18px 0 24px;
+        accent-color: var(--rose);
+      }
+
+      .quiz-question {
+        margin: 0 0 22px;
+        font-size: 1.4rem;
+        line-height: 1.4;
+      }
+
+      .quiz-answers {
+        display: grid;
+        gap: 10px;
+      }
+
+      .quiz-answer {
+        min-height: 52px;
+        padding: 14px 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--ink);
+        text-align: left;
+        line-height: 1.5;
+        cursor: pointer;
+        overflow-wrap: anywhere;
+      }
+
+      .quiz-answer:hover:not(:disabled) {
+        border-color: var(--rose);
+        background: rgba(245, 167, 189, 0.14);
+      }
+
+      .quiz-answer:focus-visible, .quiz-shell button:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 4px;
+      }
+
+      .quiz-answer:disabled {
+        cursor: default;
+      }
+
+      .quiz-answer[data-correct="true"] {
+        border-color: #a9d5b3;
+        background: rgba(169, 213, 179, 0.15);
+      }
+
+      .quiz-answer[data-selected="true"] {
+        box-shadow: inset 4px 0 var(--rose);
+      }
+
+      .quiz-feedback {
+        min-height: 4.5em;
+        margin: 22px 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .quiz-shell [hidden] {
+        display: none;
+      }
+
+      .quiz-result p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .petal {
+        position: fixed;
+        top: -40px;
+        left: var(--left);
+        z-index: -1;
+        width: 14px;
+        height: 22px;
+        border-radius: 70% 30% 70% 30%;
+        background: linear-gradient(135deg, #ffc0cf, #f0709d);
+        opacity: 0.58;
+        transform: rotate(var(--tilt));
+        animation: fall var(--fall) linear infinite;
+        animation-delay: var(--delay);
+      }
+
+      @keyframes shimmer {
+        from {
+          transform: translateY(0);
+        }
+
+        to {
+          transform: translateY(-80px);
+        }
+      }
+
+      @keyframes fall {
+        to {
+          transform: translate3d(38px, 110vh, 0) rotate(calc(var(--tilt) + 240deg));
+        }
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 860px) {
+        .hero-shell,
+        .letter,
+        .wish {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 78px;
+        }
+
+        .countdown-card,
+        .date-mark {
+          position: static;
+        }
+
+        .memory-grid {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 54px 0;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .page {
+          width: min(100% - 22px, 1160px);
+        }
+
+        .timer {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .note,
+        .memory,
+        .countdown-card,
+        .wish-panel,
+        .wish-card {
+          padding: 20px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 1ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="petal" style="--left: 8%; --tilt: 18deg; --fall: 14s; --delay: -3s;"></div>
+    <div class="petal" style="--left: 24%; --tilt: -24deg; --fall: 18s; --delay: -10s;"></div>
+    <div class="petal" style="--left: 51%; --tilt: 38deg; --fall: 16s; --delay: -7s;"></div>
+    <div class="petal" style="--left: 76%; --tilt: -12deg; --fall: 20s; --delay: -12s;"></div>
+    <div class="petal" style="--left: 91%; --tilt: 28deg; --fall: 15s; --delay: -5s;"></div>
+
+    <header class="hero page">
+      <div class="hero-shell">
+        <div>
+          <p class="eyebrow"><span></span> 11 October</p>
+          <h1>Happy birthday, my love.</h1>
+          <p class="lead">
+            Tonight is for you: for your smile, your softness, your strength,
+            and the way you make ordinary days feel like something the stars
+            planned carefully.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#letter">Read my heart</a>
+            <a class="button secondary" href="#wish">Open your wish</a>
+            <a class="button secondary" href="#quiz">Play our little quiz</a>
+          </div>
+          <a class="scroll-cue" href="#letter">A small letter is waiting</a>
+        </div>
+
+        <aside class="countdown-card" aria-label="Countdown to October 11">
+          <h2>Counting the stars until your day</h2>
+          <div class="timer" id="timer">
+            <div><strong id="days">--</strong><span>Days</span></div>
+            <div><strong id="hours">--</strong><span>Hours</span></div>
+            <div><strong id="minutes">--</strong><span>Minutes</span></div>
+            <div><strong id="seconds">--</strong><span>Seconds</span></div>
+          </div>
+          <p id="timerText">
+            Every second is just another tiny reason to celebrate you.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="page letter" id="letter">
+        <div class="date-mark">
+          <strong>11</strong>
+          <span>October</span>
+        </div>
+
+        <div class="letter-copy">
+          <h2 class="section-title">A little piece of my heart</h2>
+          <article class="note">
+            <p>
+              I love you in the quiet ways and the loud ways. I love you when
+              you laugh without holding back, when you talk about the things
+              you care about, and when your eyes make the whole world feel
+              softer. Being loved by you is one of the most beautiful gifts I
+              have ever known.
+            </p>
+          </article>
+          <article class="note">
+            <p>
+              You are my favorite thought in the middle of a busy day and my
+              calm place when everything feels too much. You make love feel
+              gentle, honest, and alive. I hope this birthday reminds you that
+              you are deeply cherished, not only today, but in every little
+              moment I get to call you mine.
+            </p>
+          </article>
+          <article class="note">
+            <p>
+              If I could give you anything, I would give you the same warmth
+              you give me: a life full of peace, laughter, confidence, and
+              dreams that keep coming true. I am so proud of you, so grateful
+              for you, and so completely in love with you.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" aria-labelledby="reasons-title">
+        <h2 class="section-title" id="reasons-title">Three things I adore</h2>
+        <div class="memory-grid">
+          <article class="memory">
+            <span>One</span>
+            <h3>Your heart</h3>
+            <p>
+              You care in a way that feels rare. You notice small things, you
+              make people feel seen, and you bring kindness into rooms without
+              needing attention for it.
+            </p>
+          </article>
+          <article class="memory">
+            <span>Two</span>
+            <h3>Your light</h3>
+            <p>
+              There is something about you that changes the mood of a day. Your
+              smile stays with me. Your voice feels like home. Your joy is
+              impossible not to love.
+            </p>
+          </article>
+          <article class="memory">
+            <span>Three</span>
+            <h3>Your future</h3>
+            <p>
+              I believe in everything you are becoming. I want to be there for
+              the dreams, the surprises, the hard days, and every victory that
+              makes you proud.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="quiz" aria-labelledby="quiz-title" hidden>
+        <h2 class="section-title" id="quiz-title">How well do you know my heart?</h2>
+        <div class="quiz-shell">
+          <div id="quizPlay">
+            <div class="quiz-meta">
+              <span id="quizCount"></span>
+              <span id="quizScore"></span>
+            </div>
+            <progress class="quiz-progress" id="quizProgress" value="0" max="5" aria-label="Questions completed"></progress>
+            <h3 class="quiz-question" id="quizQuestion" tabindex="-1"></h3>
+            <div class="quiz-answers" id="quizAnswers" role="group" aria-labelledby="quizQuestion"></div>
+            <p class="quiz-feedback" id="quizFeedback" role="status"></p>
+            <button class="button" id="quizNext" type="button" hidden>Next question</button>
+          </div>
+          <div class="quiz-result" id="quizResult" hidden>
+            <h3 class="quiz-question" id="quizResultTitle" tabindex="-1">You have my heart. Always.</h3>
+            <p id="quizFinalScore"></p>
+            <p>There is one answer I will never have to think twice about: you.
+              In a world full of possibilities, you are the person I want beside me.
+              Happy birthday, my love. Here is to more laughter, more little adventures,
+              and more days of choosing each other.</p>
+            <button class="button secondary" id="quizRestart" type="button">Play again</button>
+            <a class="button" href="#wish">Your birthday wish awaits</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="page wish" id="wish">
+        <div class="wish-panel">
+          <h2 class="section-title">My birthday wish for you</h2>
+          <p>
+            May this new year of your life be kind to you. May it bring you
+            moments that make you stop and smile, people who protect your peace,
+            and reasons to believe even more in your own magic.
+          </p>
+          <p>
+            And may you always remember this: somewhere in the world, my heart
+            is choosing you again and again.
+          </p>
+        </div>
+
+        <div class="wish-card" id="wishCard">
+          <button class="moon-button" id="wishButton" type="button">
+            Open<br>your wish
+          </button>
+          <div class="hidden-wish" aria-live="polite">
+            <h3>I love you.</h3>
+            <p>
+              Happy birthday, my beautiful girl. I hope your day feels as
+              special as you make my life feel.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page">
+      Made with all my love for October 11.
+    </footer>
+
+    <script>
+      const birthdayMonth = 9;
+      const birthdayDay = 11;
+      const now = new Date();
+      let target = new Date(now.getFullYear(), birthdayMonth, birthdayDay);
+
+      if (now > new Date(now.getFullYear(), birthdayMonth, birthdayDay, 23, 59, 59)) {
+        target = new Date(now.getFullYear() + 1, birthdayMonth, birthdayDay);
+      }
+
+      const timerText = document.getElementById("timerText");
+      const days = document.getElementById("days");
+      const hours = document.getElementById("hours");
+      const minutes = document.getElementById("minutes");
+      const seconds = document.getElementById("seconds");
+
+      function updateTimer() {
+        const distance = target - new Date();
+
+        if (distance <= 0) {
+          days.textContent = "00";
+          hours.textContent = "00";
+          minutes.textContent = "00";
+          seconds.textContent = "00";
+          timerText.textContent = "Today is your day, my love. The whole sky is celebrating you.";
+          return;
+        }
+
+        const totalSeconds = Math.floor(distance / 1000);
+        const dayValue = Math.floor(totalSeconds / 86400);
+        const hourValue = Math.floor((totalSeconds % 86400) / 3600);
+        const minuteValue = Math.floor((totalSeconds % 3600) / 60);
+        const secondValue = totalSeconds % 60;
+
+        days.textContent = String(dayValue).padStart(2, "0");
+        hours.textContent = String(hourValue).padStart(2, "0");
+        minutes.textContent = String(minuteValue).padStart(2, "0");
+        seconds.textContent = String(secondValue).padStart(2, "0");
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+
+      document.getElementById("wishButton").addEventListener("click", () => {
+        document.getElementById("wishCard").classList.add("open");
+      });
+
+      // Personalize the questions, choices, and replies here before sharing.
+      // The answer is the zero-based position of the correct choice.
+      const loveQuestions = [
+        {
+          question: "Which date deserves its own little celebration in my heart?",
+          choices: ["11 October", "1 January", "Every Monday"],
+          answer: 0,
+          reply: "11 October. The day the world received you, and a day I will always be grateful for."
+        },
+        {
+          question: "What is my favorite part of an ordinary day?",
+          choices: ["Finally charging my phone", "Hearing from you", "Deciding what to eat"],
+          answer: 1,
+          reply: "Hearing from you. One little message from you can change my whole day."
+        },
+        {
+          question: "If I could choose anywhere to be, where would it be?",
+          choices: ["On the moon", "In a very long queue", "Beside you"],
+          answer: 2,
+          reply: "Beside you. Even the simplest place feels special when we are there together."
+        },
+        {
+          question: "What do I wish for you this birthday?",
+          choices: ["Peace, happiness, and dreams coming true", "An endless pile of homework", "A phone battery stuck at 1%"],
+          answer: 0,
+          reply: "All the happiness you deserve. I want to see you smile, grow, and feel proud of yourself."
+        },
+        {
+          question: "One last question: how long do I want to keep choosing you?",
+          choices: ["Until the cake is finished", "For all the days you will let me", "Just until midnight"],
+          answer: 1,
+          reply: "For all the days you will let me. The birthday ends, but my love for you does not."
+        }
+      ];
+
+      const quiz = {
+        question: document.getElementById("quizQuestion"),
+        answers: document.getElementById("quizAnswers"),
+        feedback: document.getElementById("quizFeedback"),
+        next: document.getElementById("quizNext"),
+        count: document.getElementById("quizCount"),
+        score: document.getElementById("quizScore"),
+        progress: document.getElementById("quizProgress"),
+        play: document.getElementById("quizPlay"),
+        result: document.getElementById("quizResult")
+      };
+      let questionIndex = 0;
+      let correctAnswers = 0;
+      let answered = false;
+      quiz.progress.max = loveQuestions.length;
+
+      function renderQuestion(moveFocus = false) {
+        const item = loveQuestions[questionIndex];
+        answered = false;
+        quiz.question.textContent = item.question;
+        quiz.count.textContent = `Question ${questionIndex + 1} of ${loveQuestions.length}`;
+        quiz.score.textContent = `${correctAnswers} love points`;
+        quiz.progress.value = questionIndex;
+        quiz.feedback.textContent = "";
+        quiz.next.hidden = true;
+        quiz.next.textContent = questionIndex === loveQuestions.length - 1 ? "Reveal my last message" : "Next question";
+        quiz.answers.replaceChildren();
+        item.choices.forEach((choice, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "quiz-answer";
+          button.textContent = choice;
+          button.addEventListener("click", () => {
+            if (answered) return;
+            answered = true;
+            const correct = index === item.answer;
+            if (correct) correctAnswers += 1;
+            quiz.score.textContent = `${correctAnswers} love points`;
+            quiz.progress.value = questionIndex + 1;
+            Array.from(quiz.answers.children).forEach((option, optionIndex) => {
+              option.disabled = true;
+              option.dataset.correct = String(optionIndex === item.answer);
+              option.dataset.selected = String(optionIndex === index);
+            });
+            quiz.feedback.textContent = `${correct ? "You know me so well!" : "A cute guess! Here is my answer:"} ${item.reply}`;
+            quiz.next.hidden = false;
+            quiz.next.focus();
+          });
+          quiz.answers.append(button);
+        });
+        if (moveFocus) quiz.question.focus();
+      }
+
+      quiz.next.addEventListener("click", () => {
+        if (!answered) return;
+        questionIndex += 1;
+        if (questionIndex < loveQuestions.length) {
+          renderQuestion(true);
+          return;
+        }
+        quiz.play.hidden = true;
+        quiz.result.hidden = false;
+        document.getElementById("quizFinalScore").textContent =
+          `${correctAnswers} out of ${loveQuestions.length} love points. Whatever your score, you already have all my love.`;
+        document.getElementById("quizResultTitle").focus();
+      });
+
+      document.getElementById("quizRestart").addEventListener("click", () => {
+        questionIndex = 0;
+        correctAnswers = 0;
+        quiz.result.hidden = true;
+        quiz.play.hidden = false;
+        renderQuestion(true);
+      });
+
+      renderQuestion();
+      document.getElementById("quiz").hidden = false;
+    </script>
+  </body>
+</html>
